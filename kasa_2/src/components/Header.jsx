@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
 
 import "../styles/header.sass";
-
 import logo from "../assets/LOGO.png";
+
+
 
 export default function Header() {
     return (
@@ -12,7 +12,6 @@ export default function Header() {
             <nav>
                 <Link className="link link_1" to="/">Accueil</Link>
                 <Link className="link" to="/About">A Propos</Link>
-                
             </nav>
         </header>
     );

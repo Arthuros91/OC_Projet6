@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
-import ErrorPage from './pages/404';
+//import ErrorPage from './pages/404';
 import Location from './pages/location';
 import About from './pages/about';
 
@@ -20,7 +20,7 @@ root.render(
         <Route path="/" element={<Home />} />
         <Route path="/Location" element={<Location />} />
         <Route path="/About" element={<About />} />
-        <Route path="*" element={<ErrorPage />} />
+        
       </Routes>
       <Footer />
     </Router>
