@@ -1,18 +1,15 @@
 import "../styles/gallery.sass"
-import locations from "../datas/locations.json"
+import Card from "./Card"
 
 
-export default function Gallery() {
 
-
+export default function Gallery({props}) {
     //render
     return(
         <div id="gallery">
-            {locations.map((loc) => (
-                <div key={loc.id} className="card">
-                    <img src={loc.cover} alt={loc.title}/>
-                    <p>{loc.title}</p>
-                </div>))}
+            {props.map((loc) => (
+                <Card key={loc.id} rental={loc}/>
+            ))}
       </div>
         
     )

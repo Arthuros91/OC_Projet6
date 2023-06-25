@@ -1,0 +1,26 @@
+@import "./Global/main"
+
+
+.collapse
+    display: flex
+    justify-content: space-between
+    width:45%
+    border: 1px solid $main-color
+    background-color: $main-color
+    color: #F6F6F6
+    border-radius: 10px
+    padding: 10px 5px
+
+    button
+        font-size: 32px
+        background-color: #ffffff00
+        color: #F6F6F6
+        border: none
+        transition-property: transform
+        transition-duration: 400ms
+        &.open
+            @include open-animation
+        &.closed
+            @include close-animation
+    p
+        font-size: $s-font-size
