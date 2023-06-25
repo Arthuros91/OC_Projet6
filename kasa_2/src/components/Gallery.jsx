@@ -8,7 +8,7 @@ export default function Gallery({props}) {
     return(
         <div id="gallery">
             {props.map((loc) => (
-                <Card key={loc.id} rental={loc}/>
+                <Card key={loc.id} rental={loc} />
             ))}
       </div>
         

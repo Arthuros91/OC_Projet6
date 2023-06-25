@@ -1,25 +1,26 @@
 @import "./Global/main"
 
 .card
+    display: flex
+    align-items: flex-end
+    justify-content: center
     cursor: pointer
     width:340px
     height: 340px
-    border: 1px solid $main-color
     border-radius: 15px
-    margin:15px
-    
-
-    img
-        width:100%
-        border-radius: 15px 15px 0 0
-
-
+    margin: 0 2.5% 2.5% 2.5% 
+    background-size: cover
 
     h2
-        font-size:18px
-        color: $main-color
-        z-index: 1
-
+        font-size: $s-font-size
+        color: white
 
     .link
         text-decoration: none
+
+    
+    @media (max-width: 775px)
+        width:85%
+
+    @media (max-width: 500px)
+        width:95%
