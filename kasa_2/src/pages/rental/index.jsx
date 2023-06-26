@@ -43,7 +43,7 @@ export default function Rental() {
             </div>
             
             <div id="rentalDescriptions">
-                <Collapse title="description" />
+                <Collapse title="Description" text={rental.description} />
             </div>    
         </main>
     );
