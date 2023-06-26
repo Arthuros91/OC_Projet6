@@ -25,25 +25,26 @@ export default function Rental() {
 
     //render
     return (
-        <div className="rentalArticle">
+        <main className="rentalArticle">
             <Carousel props={rental.pictures} />
             <div className="rentalInfos">
                 <div className="rentalTitle">
                     <h2>{rental.title}</h2>
                     <p>{rental.location}</p>
+                    <ul className="tagsList">{rendertagsList(rental.tags)}</ul>
                 </div>
-                <div className="userInfos">
-                    <p>{rental.host.name}</p>
-                    <img src={rental.host.picture} alt="propriétaire" />
+                <div className="notation">
+                    <div className="userInfos">
+                        <p>{rental.host.name}</p>
+                        <img src={rental.host.picture} alt="propriétaire" />
+                    </div>
+                    <StarsNotation starNumber={rental.rating}/>
                 </div>
             </div>
-            <div className="notation">
-                <ul className="tagsList">{rendertagsList(rental.tags)}</ul>
-                <StarsNotation starNumber={rental.rating}/>
-            </div>
+            
             <div id="rentalDescriptions">
                 <Collapse title="description" />
             </div>    
-        </div>
+        </main>
     );
 }
