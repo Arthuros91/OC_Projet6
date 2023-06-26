@@ -7,17 +7,13 @@ export default function Card({ rental }) {
 
     const [backgroundImage, setBackgroundImage] = useState('');
 
-  useEffect(() => {
-    // Charger les données JSON et extraire l'URL de l'image de fond
+  useEffect(() => { 
     setBackgroundImage(rental.cover)
-    // Mettre à jour la variable d'état `backgroundImage`
-  }, []);
+  }, [rental.cover]);
 
     return (
-        <div className="card" style={{ backgroundImage: `url(${backgroundImage})` }}>
-            <Link to={locID} className="link">
+        <Link to={locID} className="card" style={{ backgroundImage: `url(${backgroundImage})` }}>
                 <h2>{rental.title}</h2>
-            </Link>
-        </div>
+        </Link>
     );
 }
