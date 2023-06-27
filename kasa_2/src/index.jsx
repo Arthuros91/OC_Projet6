@@ -7,7 +7,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 
 import Home from './pages/Home';
 import ErrorPage from './pages/404';
-import RentalArticle from './pages/rental';
+import Rental from './pages/rental';
 import About from './pages/about';
 
 import Header from './components/Header';
@@ -24,7 +24,7 @@ root.render(
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/:id" element={<RentalArticle />} />
+        <Route path="/:id" element={<Rental />} />
         <Route path="/About" element={<About />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
