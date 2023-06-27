@@ -1,20 +1,28 @@
-//import { useState, useEffect } from "react";
-import "../../styles/home.sass"
+import { useEffect, useState } from "react";
 
-import rentals from "../../datas/rentals.json"
+import Banner from "../../components/Banner";
 import Gallery from "../../components/Gallery";
+import env from "react-dotenv" 
 
 
 
 export default function Home() {
+  const [rentalsList, setRentalList] = useState([])
+
+  
+  useEffect(() => {
+    fetch(env.BACK_URL)
+         .then((response) => response.json())
+         .then(( rentals ) => setRentalList(rentals))
+         .catch((error) => console.log(error))
+  
+ }, [])
 
   //render
   return (
     <main id="Home">
-      <div id="banner">
-        <h1>Chez vous, partout et ailleurs </h1>
-      </div>
-      <Gallery props={rentals}/>
+      <Banner />
+      <Gallery props={rentalsList}/>
     </main>
   );
 }

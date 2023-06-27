@@ -42,8 +42,9 @@ export default function Rental() {
                 </div>
             </div>
             
-            <div id="rentalDescriptions">
+            <div className="rentalDescriptions">
                 <Collapse title="Description" text={rental.description} />
+                <Collapse title="Equipement" text={rental.equipments}/>
             </div>    
         </main>
     );

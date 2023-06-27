@@ -1,32 +1,5 @@
-useEffect(() => {
-    fetch(`http://localhost:8000/survey`)
-         .then((response) => response.json()
-         .then(({ surveyData }) => console.log(surveyData))
-         .catch((error) => console.log(error))
-     )
- }, [])
-
-
-<Route path="*" element={<ErrorPage />} />
-
-<img src={loc.cover} alt={loc.title}/>
-                    <p>{loc.title}</p>
-
-
-
-
-
-
-
-
-
 
 # Getting Started with Create React App
-
-
-
-
-
 
 
 

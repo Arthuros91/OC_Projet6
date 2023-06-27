@@ -4,10 +4,7 @@
 .collapse
     display: flex
     flex-direction: column
-    width:45%
-
-
-    
+    font-size: $s-font-size
 
     .titleBox
         display: flex
@@ -18,24 +15,23 @@
         border-radius: 10px
         padding: 10px
 
-
-
-
     .textBox
         background-color: #F6F6F6
         color: $main-color
-        
         padding:10px
-        
-        p
+        overflow: hidden
+        transition: max-height 3s ease-in-out
+
+        p,li
             font-size: $sm-font-size
+        &.open 
+            max-height: 1
 
-    
+        &.closed 
+            max-height: 0
 
-    
+        
 
-    @media (max-width: 850px)
-        width:100%
 
     button
         font-size: 32px

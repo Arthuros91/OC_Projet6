@@ -1,14 +1,13 @@
-
 import "../styles/starsNotation.sass"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
 
 
 export default function StarsNotation({starNumber}) {
     const getStarStyle = (index) => {
         const color = index <= starNumber  ? '#FF6060' : 'gray';
         return {
-          color: color,
-          // Ajoute d'autres styles CSS au besoin
+          color: color
         };
     };
 
