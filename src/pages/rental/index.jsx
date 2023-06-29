@@ -1,36 +1,34 @@
 import "../../styles/rental.sass";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import env from "react-dotenv" 
+import env from "react-dotenv";
 
 import Carousel from "../../components/Carousel";
 import StarsNotation from "../../components/StarsNotation";
 import Collapse from "../../components/Collapse";
-import rentals from "../../rentals.json"
-
 
 export default function Rental() {
     //recup Info
-   // const [rentals, setRental] = useState([])
-    const { id } = useParams();
+    const [rentalsFile, setRentalFile] = useState([]);
+    const id = useParams();
 
+    useEffect(() => {
+        fetch(env.BACK_URL)
+            .then((response) => response.json())
+            .then((rentals) => setRentalFile(rentals))
+            .catch((error) => console.log(error));
+    }, []);
 
-    //useEffect(() => {
-   //     fetch(env.BACK_URL)
-   //          .then((response) => response.json())
-   //          .then((rentalsi) => setRental(rentalsi))
-   //          .catch((error) => console.log(error))
-   // }, [])
+    const rentalInfos = rentalsFile.filter((rental) => rental.id === id);
+    const rental = rentalInfos[0];
 
-    const rentalInfo = rentals.filter((rental) => rental.id === id)
-    const rental = rentalInfo[0]
-    console.log(rentals)
-    const rendertagsList = (tags) => { 
-        return tags.map(tag => <li key={tag} className="tag">{tag}</li>)
-    }
-
-
-
+    const rendertagsList = (tags) => {
+        return tags.map((tag) => (
+            <li key={tag} className="tag">
+                {tag}
+            </li>
+        ));
+    };
 
     //render
     return (
@@ -47,14 +45,14 @@ export default function Rental() {
                         <p>{rental.host.name}</p>
                         <img src={rental.host.picture} alt="propriétaire" />
                     </div>
-                    <StarsNotation starNumber={rental.rating}/>
+                    <StarsNotation starNumber={rental.rating} />
                 </div>
             </div>
-            
+
             <div className="rentalDescriptions">
                 <Collapse title="Description" text={rental.description} />
-                <Collapse title="Equipement" text={rental.equipments}/>
-            </div>    
+                <Collapse title="Equipement" text={rental.equipments} />
+            </div>
         </main>
     );
 }

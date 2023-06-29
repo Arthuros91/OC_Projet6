@@ -5,6 +5,10 @@ import "../styles/collapse.sass";
 
 export default function Collapse({ title, text }) {
     const [isVisible, setIsVisible] = useState(false);
+    
+    const handleClick = () => {
+        setIsVisible(!isVisible);
+    };
     const textBox =
         typeof text === "string" ? (
             <p>{text}</p>
@@ -15,10 +19,6 @@ export default function Collapse({ title, text }) {
                 ))}
             </ul>
         );
-    const handleClick = () => {
-        setIsVisible(!isVisible);
-    };
-
     return (
         <div className="collapse">
             <div className="titleBox">

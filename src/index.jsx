@@ -13,7 +13,6 @@ import About from './pages/about';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-
 library.add(fas);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
