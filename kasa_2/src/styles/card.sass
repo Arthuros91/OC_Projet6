@@ -1,20 +1,23 @@
 @import "./Global/main"
 
+
+
 .card
-    display: flex
-    align-items: flex-end
-    justify-content: center
     width:340px
     height: 340px
     border-radius: 15px
-    margin: 0 2.5% 2.5% 2.5% 
     background-size: cover
     text-decoration: none
+    margin: 0 2.5% 2.5% 2.5% 
 
+    .maskCard
+        background: linear-gradient(180deg, rgba(255,255,255,0%) 0%, rgba(0,0,0,0.5) 85%)
+        @include mask
+        align-items: flex-end
+    
     h2
         font-size: $s-font-size
         color: white
-
 
 
     @media (max-width: 1000px)

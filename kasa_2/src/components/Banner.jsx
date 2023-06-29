@@ -2,10 +2,13 @@ import "../styles/banner.sass"
 
 
 
-export default function Banner() {
+
+export default function Banner({text, imageURL}) {
     return(
-        <div id="banner">
-            <h1>Chez vous, partout et ailleurs </h1>
-      </div>
-    )
+        <div className="banner" style={{ backgroundImage: `url(${imageURL})` }}>
+            <div className="mask">
+                <h1> { text } </h1>
+            </div>
+    </div>
+    )    
 }

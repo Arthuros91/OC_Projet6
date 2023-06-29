@@ -5,15 +5,23 @@ import { useState, useEffect } from "react";
 export default function Card({ rental }) {
     const locID = String("/" + rental.id);
 
-    const [backgroundImage, setBackgroundImage] = useState('');
+    const [backgroundImage, setBackgroundImage] = useState("");
 
-  useEffect(() => { 
-    setBackgroundImage(rental.cover)
-  }, [rental.cover]);
+    useEffect(() => {
+        setBackgroundImage(rental.cover);
+    }, [rental.cover]);
 
     return (
-        <Link to={locID} className="card" style={{ backgroundImage: `url(${backgroundImage})` }}>
+  
+            <Link
+                to={locID}
+                className="card"
+                style={{ backgroundImage: `url(${backgroundImage})` }}
+            >
+              <div className="maskCard">
                 <h2>{rental.title}</h2>
-        </Link>
+              </div>
+            </Link>
+  
     );
 }

@@ -1,5 +1,5 @@
 import "../styles/footer.sass";
-import logo_black from "../assets/LOGO_black.png";
+import logo_black from "../assets/LOGO_black.png"
 
 
 

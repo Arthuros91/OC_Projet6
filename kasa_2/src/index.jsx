@@ -14,7 +14,6 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 
-// Importez les icônes solides que vous souhaitez utiliser
 library.add(fas);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

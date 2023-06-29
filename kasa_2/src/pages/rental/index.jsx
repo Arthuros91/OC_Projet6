@@ -6,26 +6,25 @@ import env from "react-dotenv"
 import Carousel from "../../components/Carousel";
 import StarsNotation from "../../components/StarsNotation";
 import Collapse from "../../components/Collapse";
-
+import rentals from "../../rentals.json"
 
 
 export default function Rental() {
     //recup Info
-    const [rentalsList, setRentalList] = useState([])
+   // const [rentals, setRental] = useState([])
     const { id } = useParams();
 
-    
 
-    useEffect(() => {
-        fetch(env.BACK_URL)
-             .then((response) => response.json())
-             .then(( rentals ) => setRentalList(rentals))
-             .catch((error) => console.log(error))
-    }, [])
+    //useEffect(() => {
+   //     fetch(env.BACK_URL)
+   //          .then((response) => response.json())
+   //          .then((rentalsi) => setRental(rentalsi))
+   //          .catch((error) => console.log(error))
+   // }, [])
 
-    const rentalInfo = [...rentalsList].filter((rental) => rental.id === id);
-    const rental = rentalInfo[0];
-
+    const rentalInfo = rentals.filter((rental) => rental.id === id)
+    const rental = rentalInfo[0]
+    console.log(rentals)
     const rendertagsList = (tags) => { 
         return tags.map(tag => <li key={tag} className="tag">{tag}</li>)
     }

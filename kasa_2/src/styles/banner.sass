@@ -1,22 +1,24 @@
 @import "./Global/main"
 
 
-#banner
-    background-image:  url($imageBannerUrl)
+.banner
     background-size: cover
     background-repeat:no-repeat
     height: 220px
-    display: flex
-    align-items: center
-    justify-content: center
+    font-size: $sm-font-size
     color: white
     border-radius: 15px
-    filter: grayscale(30%)
     margin-bottom: 50px
 
-    h1
-        filter: contrast(200%)
-        font-size: $xl-font-size
+    .mask
+        @include mask
+        background-color: rgba(0, 0, 0, 0.3) 
+        align-items: center
+
+
+
+        
+        
 
 
     
