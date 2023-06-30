@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 
 import "../../styles/rental.sass";
 
@@ -15,7 +16,7 @@ export default function Rental() {
     const rentalsList = rentals;
     const { id } = useParams();
     const elementTrouve = [...rentalsList].find(element => element.id === id);
-    //const [listRentals, setListRentals] = useState([])
+    const [listRentals, setListRentals] = useState([])
 
     //useEffect(() => {
         //fetch("http://localhost:3000/rentals.json")
