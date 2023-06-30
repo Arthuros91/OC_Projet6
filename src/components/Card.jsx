@@ -1,9 +1,10 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../styles/card.sass";
-import { useState, useEffect } from "react";
+
 
 export default function Card({ rental }) {
-    const locID = String("/" + rental.id);
+    const locID = String("/rentals/" + rental.id);
 
     const [backgroundImage, setBackgroundImage] = useState("");
 
@@ -13,15 +14,15 @@ export default function Card({ rental }) {
 
     return (
   
-            <Link
-                to={locID}
-                className="card"
-                style={{ backgroundImage: `url(${backgroundImage})` }}
-            >
-              <div className="maskCard">
-                <h2>{rental.title}</h2>
-              </div>
-            </Link>
+      <Link
+        to={locID}
+        className="card"
+        style={{ backgroundImage: `url(${backgroundImage})` }}
+      >
+        <div className="maskCard">
+          <h2>{rental.title}</h2>
+        </div>
+      </Link>
   
     );
 }

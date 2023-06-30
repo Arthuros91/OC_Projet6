@@ -4,7 +4,8 @@
 .collapse
     display: flex
     flex-direction: column
-    font-size: $s-font-size
+    font-size: $sm-font-size
+    margin: 20px
 
     .titleBox
         display: flex
@@ -14,25 +15,21 @@
         color: white
         border-radius: 10px
         padding: 10px
+        p
+            padding: 0 10px
 
     .textBox
         background-color: #F6F6F6
         color: $main-color
-        padding:10px
+        border-radius: 0 0 10px 10px
         overflow: hidden
-        //transition: max-height 15s ease-in-out
-
+        transition: height 1s ease-in-out
+        
         p,li
             font-size: $sm-font-size
-        &.open 
-            max-height: 1
+            padding:20px
 
-        &.closed 
-            max-height: 0
-
-        
-
-
+    
     button
         font-size: 32px
         background-color: #ffffff00
@@ -44,5 +41,3 @@
             @include open-animation
         &.closed
             @include close-animation
-    p
-        font-size: $s-font-size

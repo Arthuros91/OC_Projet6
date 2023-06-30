@@ -1,25 +1,27 @@
-import "../../styles/rental.sass";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import env from "react-dotenv";
+
+import "../../styles/rental.sass";
 
 import Carousel from "../../components/Carousel";
 import StarsNotation from "../../components/StarsNotation";
 import Collapse from "../../components/Collapse";
 
+
 export default function Rental() {
     //recup Info
-    const [rentalsFile, setRentalFile] = useState([]);
+    const [rentalsiList, setRentaliList] = useState([]);
     const id = useParams();
 
     useEffect(() => {
-        fetch(env.BACK_URL)
+        fetch("http://localhost:3000/rentals.json")
             .then((response) => response.json())
-            .then((rentals) => setRentalFile(rentals))
+            .then((rentalsis) => setRentaliList(rentalsis))
             .catch((error) => console.log(error));
     }, []);
 
-    const rentalInfos = rentalsFile.filter((rental) => rental.id === id);
+    const rentalInfos = [...rentalsiList].filter((rental) => rental.id === id);
     const rental = rentalInfos[0];
 
     const rendertagsList = (tags) => {
@@ -29,7 +31,7 @@ export default function Rental() {
             </li>
         ));
     };
-
+    
     //render
     return (
         <main className="rentalArticle">
