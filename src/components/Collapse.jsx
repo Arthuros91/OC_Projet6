@@ -42,7 +42,7 @@ export default function Collapse({ title, text }) {
                     <FontAwesomeIcon icon="fas fa-chevron-up" />
                 </button>
             </div>
-            <div className={`textBox ${isFocused ? "focus" : ""}`} style={{ height: isFocused ? height + "px" : "0" }} ref={divRef}>
+            <div className="textBox" style={{ height: isFocused ? height + "px" : "0" }} ref={divRef}>
                 {textBox}
             </div>
         </div>

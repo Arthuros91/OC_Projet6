@@ -2,6 +2,34 @@
 # Getting Started with Create React App
 
 
+<Carousel props={rental.pictures} />
+            <div className="rentalInfos">
+                <div className="rentalTitle">
+                    <h2>{rental.title}</h2>
+                    <p>{rental.location}</p>
+                    <ul className="tagsList">{rendertagsList(rental.tags)}</ul>
+                </div>
+                <div className="notation">
+                    <div className="userInfos">
+                        <p>{rental.host.name}</p>
+                        <img src={rental.host.picture} alt="propriétaire" />
+                    </div>
+                    <StarsNotation starNumber={rental.rating} />
+                </div>
+            </div>
+
+            <div className="rentalDescriptions">
+                <Collapse title="Description" text={rental.description} />
+                <Collapse title="Equipement" text={rental.equipments} />
+            </div>
+
+
+
+
+
+
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

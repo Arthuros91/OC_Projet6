@@ -7,6 +7,8 @@ import Gallery from "../../components/Gallery";
 const imageBannerUrl = "./Image_1-banner.png";
 const textBanner = "Chez vous, partout et ailleurs";
 
+
+
 export default function Home() {
   const [rentalsList, setRentalList] = useState([]);
   useEffect(() => {

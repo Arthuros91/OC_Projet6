@@ -22,7 +22,7 @@ root.render(
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/rentals/:id" element={<Rental />} />
+        <Route path="/rentals/:id" exact element={<Rental />} />
         <Route path="/About" element={<About />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
