@@ -1,4 +1,28 @@
+"http://localhost:3000/rentals.json"
 
+
+
+useEffect(() => {
+        async function fetchData() {
+            const response = await fetch("http://localhost:3000/rentals.json")
+            const list = await response.json()
+            listrent = [...list]
+            console.log("listrent" +listrent)
+            setListRentals([1,2,3])
+            console.log(listRentals)  
+            console.log(list) 
+            setListRentals(list)
+            console.log(listRentals) 
+        };
+        fetchData().then(function() {
+            
+        })
+        //const rentalInfos = [...listRentals].filter((rental) => rental.id === id);
+        
+        //setRental(rentalInfos[0]);
+    },[])
+
+    //console.log("listRentals : " + listRentals)
 # Getting Started with Create React App
 
 

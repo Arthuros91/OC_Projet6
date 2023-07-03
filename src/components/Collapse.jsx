@@ -35,10 +35,7 @@ export default function Collapse({ title, text }) {
         <div className="collapse">
             <div className="titleBox">
                 <p>{title}</p>
-                <button
-                    className={`button ${isVisible ? "open" : "closed"}`}
-                    onClick={handleClick}
-                >
+                <button className={`button ${isVisible ? "open" : "closed"}`} onClick={handleClick}>
                     <FontAwesomeIcon icon="fas fa-chevron-up" />
                 </button>
             </div>

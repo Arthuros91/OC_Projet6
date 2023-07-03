@@ -14,11 +14,7 @@ export default function Card({ rental }) {
 
     return (
   
-      <Link
-        to={locID}
-        className="card"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-      >
+      <Link to={locID} className="card" style={{ backgroundImage: `url(${backgroundImage})` }}>
         <div className="maskCard">
           <h2>{rental.title}</h2>
         </div>

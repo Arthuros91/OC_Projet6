@@ -9,7 +9,7 @@ import logo from "../assets/LOGO.png"
 export default function Header() {
     return (
         <header>
-            <img src={ logo }alt="Logo de Kasa" />
+            <Link to="/"><img src={ logo }alt="Logo de Kasa" /></Link>
             <nav>
                 <Link className="link link_1" to="/">Accueil</Link>
                 <Link className="link" to="/About">A Propos</Link>

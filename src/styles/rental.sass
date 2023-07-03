@@ -8,7 +8,7 @@
         display: flex
         justify-content: space-between
         color: $main-color
-        margin:30px 0
+        margin:20px 0
         
         .tagsList
             display: flex
@@ -30,7 +30,7 @@
    
         p
             font-size: $s-font-size
-            margin-top:0
+            margin-top: 5px
     
     .notation
         display: flex
@@ -51,6 +51,7 @@
     .rentalDescriptions
         display: flex
         justify-content: space-between
+        align-items: center
         width:100%
         .collapse
             width:45%
@@ -60,5 +61,8 @@
             flex-direction: column
         .notation
             flex-direction: row
-        .collapse
-        width:100%
+        .rentalDescriptions
+            flex-direction: column
+            justify-content: center
+            .collapse
+                width:100%

@@ -12,7 +12,7 @@ const textBanner = "Chez vous, partout et ailleurs";
 export default function Home() {
   const [rentalsList, setRentalList] = useState([]);
   useEffect(() => {
-      fetch(env.BACK_URL)
+      fetch("http://localhost:3000/rentals.json")
           .then((response) => response.json())
           .then((rentals) => setRentalList(rentals))
           .catch((error) => console.log(error));
