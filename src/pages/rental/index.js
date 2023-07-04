@@ -20,7 +20,6 @@ export default function Rental2() {
                     (rental) => rental.id === id
                 );
                 setRental(rentalInfos[0]);
-                console.log(rentalInfos);
             })
             .catch((error) => console.log(error));
     }, []);

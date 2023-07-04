@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import env from "react-dotenv";
 
 import Banner from "../../components/Banner";
 import Gallery from "../../components/Gallery";
