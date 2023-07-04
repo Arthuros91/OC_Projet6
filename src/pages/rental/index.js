@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Carousel from "../../components/Carousel";
 import StarsNotation from "../../components/StarsNotation";
 import Collapse from "../../components/Collapse";
-import Error from "../../components/Error";
+import Loading from "../../components/Loading";
 
 import "../../styles/rental.sass";
 
@@ -56,5 +56,5 @@ export default function Rental2() {
                 <Collapse title="Equipement" text={rental.equipments} />
             </div>
         </main>
-    ) : ( <Error /> );
+    ) : ( <main><Loading /></main> );
 }
