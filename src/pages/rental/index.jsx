@@ -7,13 +7,15 @@ import Collapse from "../../components/Collapse";
 import Loading from "../../components/Loading";
 
 import "../../styles/rental.sass";
+import ErrorPage from "../404";
 
 const rentalsURL = "http://localhost:3000/rentals.json"
 
 
-export default function Rental2() {
+export default function Rental() {
     const { id } = useParams();
     const [rental, setRental] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         fetch(rentalsURL)
@@ -23,18 +25,15 @@ export default function Rental2() {
                     (rental) => rental.id === id
                 );
                 setRental(rentalInfos[0]);
+                setIsLoading(false);
             })
             .catch((error) => console.log(error));
     }, []);
 
-    const rendertagsList = (tags) => {
-        tags?.map((tag) => (
-            <li key={tag} className="tag">
-                {tag}
-            </li>
-        ));
-    };
-
+    if (isLoading) {
+        return <main><Loading /></main>;
+    } 
+    
     return rental ? (
         <main className="rentalArticle">
             <Carousel props={rental.pictures} />
@@ -42,7 +41,7 @@ export default function Rental2() {
                 <div className="rentalTitle">
                     <h2>{rental.title}</h2>
                     <p>{rental.location}</p>
-                    <ul className="tagsList">{rendertagsList(rental.tags)}</ul>
+                    <ul className="tagsList">{rental.tags.map((tag) => ( <li key={tag} className="tag"> {tag} </li>))}</ul>
                 </div>
                 <div className="notation">
                     <div className="userInfos">
@@ -58,5 +57,5 @@ export default function Rental2() {
                 <Collapse title="Equipement" text={rental.equipments} />
             </div>
         </main>
-    ) : ( <main><Loading /></main> );
+    ) : ( <main><ErrorPage /></main> );
 }
