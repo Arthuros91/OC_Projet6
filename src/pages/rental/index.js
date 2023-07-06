@@ -8,12 +8,15 @@ import Loading from "../../components/Loading";
 
 import "../../styles/rental.sass";
 
+const rentalsURL = "http://localhost:3000/rentals.json"
+
+
 export default function Rental2() {
     const { id } = useParams();
     const [rental, setRental] = useState(null);
 
     useEffect(() => {
-        fetch("http://localhost:3000/rentals.json")
+        fetch(rentalsURL)
             .then((response) => response.json())
             .then((rentalList) => {
                 const rentalInfos = rentalList.filter(
