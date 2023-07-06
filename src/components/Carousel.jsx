@@ -24,11 +24,35 @@ export default function Carousel({props}){
 
   };
 
+  const displayButtons = () => {
+    images.length > 1 ? (
+      <div id="carousel">
+        <img src={backgroundImage} alt={`location ${currentIndex+1}`}/>
+        <button className="buttonNav previous" onClick={goToPreviousSlide}><FontAwesomeIcon icon="fas fa-chevron-left" /></button>
+        <button className="buttonNav next" onClick={goToNextSlide}><FontAwesomeIcon icon="fas fa-chevron-right" /></button>
+      </div>
+    ) : (
+      <div id="carousel">
+        <img src={backgroundImage} alt={`location ${currentIndex+1}`}/>
+      </div>
+    )
+
+  }
 
   //render
-  return(<div id="carousel">
-    <img src={backgroundImage} alt={`location ${currentIndex+1}`}/>
-    <button className="buttonNav previous" onClick={goToPreviousSlide}><FontAwesomeIcon icon="fas fa-chevron-left" /></button>
-    <button className="buttonNav next" onClick={goToNextSlide}><FontAwesomeIcon icon="fas fa-chevron-right" /></button>
-</div>)
+  return( 
+    images.length > 1 ? (
+      <div id="carousel">
+        <img src={backgroundImage} alt={`location ${currentIndex+1}`}/>
+        <button className="buttonNav previous" onClick={goToPreviousSlide}><FontAwesomeIcon icon="fas fa-chevron-left" /></button>
+        <button className="buttonNav next" onClick={goToNextSlide}><FontAwesomeIcon icon="fas fa-chevron-right" /></button>
+      </div>
+    ) : (
+      <div id="carousel">
+        <img src={backgroundImage} alt={`location ${currentIndex+1}`}/>
+      </div>
+    )
+  )
+
+
 }
