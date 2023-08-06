@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "https://arthuros91.github.io/OC_Projet6/static/css/main.a0e970a4.css",
-    "main.js": "https://arthuros91.github.io/OC_Projet6/static/js/main.05cd051e.js",
+    "main.css": "/static/css/main.a0e970a4.css",
+    "main.js": "/static/js/main.05cd051e.js",
     "index.html": "/index.html",
-    "main.a0e970a4.css.map": "https://arthuros91.github.io/OC_Projet6/static/css/main.a0e970a4.css.map",
-    "main.05cd051e.js.map": "https://arthuros91.github.io/OC_Projet6/static/js/main.05cd051e.js.map"
+    "main.a0e970a4.css.map": "/static/css/main.a0e970a4.css.map",
+    "main.05cd051e.js.map": "/static/js/main.05cd051e.js.map"
   },
   "entrypoints": [
     "static/css/main.a0e970a4.css",
