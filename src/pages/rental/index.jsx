@@ -9,7 +9,7 @@ import Loading from "../../components/Loading";
 import "../../styles/rental.sass";
 import ErrorPage from "../404";
 
-const rentalsURL = "http://localhost:3000/rentals.json"
+import rentalsList from "../../datas/rentals.json";
 
 
 export default function Rental() {
@@ -18,17 +18,14 @@ export default function Rental() {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetch(rentalsURL)
-            .then((response) => response.json())
-            .then((rentalList) => {
-                const rentalInfos = rentalList.filter(
-                    (rental) => rental.id === id
-                );
-                setRental(rentalInfos[0]);
-                setIsLoading(false);
-            })
-            .catch((error) => console.log(error));
-    }, []);
+        const rentalInfos = rentalsList.filter(
+            (rental) => rental.id === id
+        );
+        setRental(rentalInfos[0]);
+        setIsLoading(false);
+        })
+
+
 
     if (isLoading) {
         return <main><Loading /></main>;
