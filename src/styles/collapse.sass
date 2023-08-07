@@ -1,0 +1,46 @@
+@import "./Global/main"
+
+
+    
+.collapse
+    display: flex
+    flex-direction: column
+    font-size: $sm-font-size
+    margin: 20px
+    justify-content: flex-start
+
+    .titleBox
+        display: flex
+        align-items: center
+        justify-content: space-between
+        background-color: $main-color
+        color: white
+        border-radius: 10px
+        padding: 10px
+        
+        p
+            padding: 0 10px
+
+    .textBox
+        background-color: #F6F6F6
+        color: $main-color
+        border-radius: 0 0 10px 10px
+        overflow: hidden
+        transition: height 1s ease-in-out
+        
+        p,li
+            font-size: $sm-font-size
+            padding:20px
+
+    
+    button
+        font-size: 32px
+        background-color: #ffffff00
+        color: #F6F6F6
+        border: none
+        transition-property: transform
+        transition-duration: 400ms
+        &.open
+            @include open-animation
+        &.closed
+            @include close-animation

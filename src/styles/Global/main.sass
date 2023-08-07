@@ -1,0 +1,23 @@
+@import "./variables.sass"
+@import "./mixins.sass"
+
+html
+    
+body 
+    @include center-page
+    width:95%
+    font-family: "Montserrat"
+
+
+#root
+    @include center-page
+    min-height: 100vh
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    
+li
+    list-style-type: none
+
+button, .card, .link
+    cursor: pointer    

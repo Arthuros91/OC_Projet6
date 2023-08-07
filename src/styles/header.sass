@@ -1,0 +1,46 @@
+@import "./Global/main"
+
+
+header 
+    display: flex
+    justify-content: space-between
+    padding: 40px 0
+
+    
+    img
+        margin-left:5% 
+    nav 
+        display: flex
+        align-items: center
+        font-size: 24px
+        font-family: Montserrat
+        margin-right:8%
+        white-space: nowrap
+        
+        .link
+            color: $main-color
+            text-decoration: none
+            &:focus
+                text-decoration: underline
+            
+            &.link_1 
+                padding-right: 15%
+
+    @media (max-width: 500px)
+        nav
+             margin-right:10%
+        img
+            width:120px
+            height: 40px
+        .link 
+            text-transform: uppercase
+            font-size: $s-font-size
+
+    @media (max-width: 300px)
+        img
+            width:60px
+            height: 20px
+
+        .link 
+            font-size: 8px
+    

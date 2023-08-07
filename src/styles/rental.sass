@@ -1,0 +1,69 @@
+@import "./Global/main"
+    
+
+.rentalArticle
+    font-family: "Montserrat"
+    padding:0
+
+    .rentalInfos
+        display: flex
+        justify-content: space-between
+        color: $main-color
+        margin:20px 0
+        
+        .tagsList
+            display: flex
+            padding:0
+
+            .tag
+                list-style-type: none
+                margin-right: 15px
+                border: 1px solid $main-color
+                padding:5px 15px
+                border-radius: 10px
+                background-color: $main-color
+                color: #F6F6F6
+
+        
+        h2
+            font-size: $m-font-size
+            margin-bottom: 0
+   
+        p
+            font-size: $s-font-size
+            margin-top: 5px
+    
+    .notation
+        display: flex
+        flex-direction: column
+        justify-content: space-around
+        align-items: center
+
+        .userInfos
+            display: flex
+            align-items: center
+
+            img
+                height: 64px
+                width:64px
+                border-radius: 50%
+                margin-left:15px
+    
+    .rentalDescriptions
+        display: flex
+
+        justify-content: space-between
+        width:100%
+        .collapse
+            width:45%
+
+    @media (max-width: 850px)
+        .rentalInfos
+            flex-direction: column
+        .notation
+            flex-direction: row
+        .rentalDescriptions
+            flex-direction: column
+            justify-content: center
+            .collapse
+                width:100%
